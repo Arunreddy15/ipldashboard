@@ -1,1 +1,78 @@
 /* Write your CSS here */
+@media screen and (min-width: 552px) {
+  .latest-match-container {
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    font-family: Bree Serif;
+    background-color: #0f172a;
+    padding: 20px 25px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    align-items: center;
+    width: 100%;
+  }
+  hr {
+    display: none;
+  }
+  .head {
+    font-family: Bree Serif;
+    font-size: 16px;
+    color: white;
+  }
+  .latest-logo {
+    height: 220px;
+  }
+  .competing-team-name {
+    font-size: 28px;
+  }
+  .details-two {
+    text-align: right;
+  }
+  label {
+    font-size: 18px;
+  }
+  .details-one {
+    display: flex;
+    justify-content: space-between;
+    width: 65%;
+  }
+}
+@media screen and (max-width: 552px) {
+  .latest-match-container {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    color: white;
+    font-family: Bree Serif;
+    background-color: #0f172a;
+    padding: 150px;
+    border-radius: 12px;
+    border-bottom: 20px;
+    padding: 20px;
+  }
+  .latest-logo {
+    height: 160px;
+    margin-left: 20px;
+  }
+  .competing-team-name {
+    font-size: 24px;
+  }
+
+  .details-one {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  label {
+    font-size: 18px;
+  }
+  .head {
+    font-size: 14px;
+    text-align: left;
+    font-family: Bree Serif;
+    color: white;
+  }
+}

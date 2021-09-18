@@ -8,7 +8,7 @@ ul {
 .home-container {
   background-image: url('https://assets.ccbp.in/frontend/react-js/ipl-dashboard-lg-bg.png');
   background-color: grey;
-
+  height: 100vh;
   background-size: cover;
   display: flex;
   flex-direction: column;
@@ -31,4 +31,12 @@ ul {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+}
+.dash-heading {
+  display: flex;
+  align-items: center;
+}
+.dash-heading img {
+  height: 50px;
+  margin-right: 20px;
 }

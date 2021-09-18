@@ -1,11 +1,15 @@
 // Write your code here
 import {Component} from 'react'
+import Loader from 'react-loader-spinner'
+
+import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css'
 import LatestMatch from '../LatestMatch'
 import MatchCard from '../MatchCard'
+
 import './index.css'
 
 class TeamMatches extends Component {
-  state = {blogData: []}
+  state = {blogData: [], isLoading: true, id: ''}
 
   componentDidMount() {
     this.getBlogItemData()
@@ -15,6 +19,8 @@ class TeamMatches extends Component {
     const {match} = this.props
     const {params} = match
     const {id} = params
+    this.setState({id})
+
     const response = await fetch(`https://apis.ccbp.in/ipl/${id}`)
     const data = await response.json()
 
@@ -48,29 +54,43 @@ class TeamMatches extends Component {
       teamBannerUrl: data.team_banner_url,
     }
 
-    this.setState({blogData: formattedData})
+    this.setState({blogData: formattedData, isLoading: false})
   }
 
-  render() {
+  renderTeamMatches = () => {
     const {blogData} = this.state
+    console.log(blogData)
     const {teamBannerUrl, latestMatchDetails, recentMatches} = blogData
-    console.log(recentMatches)
+
     return (
-      <div className="team-matches-container">
-        <img src={teamBannerUrl} alt="team-banner" />
+      <div className="team-matches-container-data ">
+        <img src={teamBannerUrl} alt="team-banner" className="banner" />
         <div className="latest-match">
           <LatestMatch latestMatchDetails={latestMatchDetails} />
         </div>
         <div>
-          <ul>
-            {recentMatches.map(eachRecentMatch => (
-              <MatchCard
-                key={eachRecentMatch.id}
-                recentMatch={eachRecentMatch}
-              />
+          <ul className="match-cards-down">
+            {recentMatches.map(each => (
+              <MatchCard key={each.id} recentMatches={each} />
             ))}
           </ul>
         </div>
+      </div>
+    )
+  }
+
+  render() {
+    const {isLoading, id} = this.state
+    const team = `team-matches-container ${id}`
+    return (
+      <div className={team}>
+        {isLoading ? (
+          <div testid="loader">
+            <Loader type="Oval" color="#ffffff" height={50} width={50} />
+          </div>
+        ) : (
+          this.renderTeamMatches()
+        )}
       </div>
     )
   }

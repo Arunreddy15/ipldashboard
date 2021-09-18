@@ -2,5 +2,57 @@
 .team-matches-container {
   display: flex;
   justify-content: center;
+  align-items: center;
+}
+.team-matches-container-data {
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
+  margin: 20px 0;
+}
+ul {
+  padding: 0;
+}
+.match-cards-down {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.latest-match {
+  width: 100%;
+}
+.banner {
+  width: 100%;
+}
+#loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.MI {
+  background: linear-gradient(#13418b, #0f172a);
+}
+.CSK {
+  background: linear-gradient(#f7db00, #0f172a);
+}
+.RCB {
+  background: linear-gradient(#d91c1f, #0f172a);
+}
+.KKR {
+  background: linear-gradient(#5755a7, #0f172a);
+}
+.DC {
+  background: linear-gradient(#4f5db0, #0f172a);
+}
+.SR {
+  background: linear-gradient(#f26d22, #0f172a);
+}
+.RR {
+  background: linear-gradient(#da237b, #0f172a);
+}
+.KXP {
+  background: linear-gradient(#a4261d, #0f172a);
 }
